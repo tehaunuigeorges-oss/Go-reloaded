@@ -1,11 +1,11 @@
-package main
+package fonction
 
 import (
     "strconv"
     "strings"
 )
 
-func low(words []string) []string {
+func Low(words []string) []string {
     var result []string
 
     for _, w := range words {
@@ -20,10 +20,7 @@ func low(words []string) []string {
             nstr := strings.TrimSuffix(strings.TrimPrefix(w, "(low,"), ")")
             n, err := strconv.Atoi(nstr)
             if err == nil && n > 0 {
-                start := len(result) - n
-                if start < 0 {
-                    start = 0
-                }
+                start := max(len(result) - n, 0)
                 for i := start; i < len(result); i++ {
                     result[i] = strings.ToLower(result[i])
                 }

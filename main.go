@@ -1,6 +1,7 @@
 package main
 
 import (
+	"Go-reloaded/fonction"
 	"fmt"
 	"os"
 	"strings"
@@ -29,7 +30,15 @@ func main() {
 			processedLines = append(processedLines, "")
 			continue
 		}
-		modifiedWords := up(words)
+
+		modifiedWords := fonction.Bin(words)
+		modifiedWords = fonction.Hex(modifiedWords)
+		modifiedWords = fonction.Low(modifiedWords)
+		modifiedWords = fonction.Cap(modifiedWords)
+		modifiedWords = fonction.Up(modifiedWords)
+		modifiedWords = fonction.Ponctuation(modifiedWords)
+		modifiedWords = fonction.Guillemet(modifiedWords)
+
 		processedLines = append(processedLines, strings.Join(modifiedWords, " "))
 	}
 

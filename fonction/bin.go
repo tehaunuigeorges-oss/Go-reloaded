@@ -1,8 +1,8 @@
-package main
+package fonction
 
 import "strconv"
 
-func bin(words []string) []string {
+func Bin(words []string) []string {
 	var result []string
 	for _, w := range words {
 		if w == "(bin)" {
@@ -15,7 +15,7 @@ func bin(words []string) []string {
 				}
 
 			}
-		}else{
+		} else {
 			result = append(result, w)
 		}
 	}
