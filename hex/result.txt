@@ -1,3 +1,20 @@
-30 files were added.
-Simply add 66 and 16 to get the output.
-The hexadecimal 255 is equal to 255 in decimal.
+30 Pokémon were caught in the forest
+255 Poké Balls were used today"
+10 trainers registered for the tournament
+100 Rare Candies were collected
+63 wild Pokémon appeared on Route 1
+200 HP was restored after the battle
+150 Gym Badges were earned this season
+42 Pikachu were spotted in the forest
+180 Potions were sold at the Poké Mart
+127 trainers were defeated by the Elite Four
+12 Legendary Pokémon were sighted this year
+50 Eggs hatched at the Day Care
+80 Ultra Balls were thrown at the Safari Zone
+9 Shiny Pokémon were found this week
+14 Gym battles were won in a row
+300 EXP points were gained from the battle
+500 steps were taken in the Safari Zone"
+8 Great Balls remained in the bag
+21 Routes were explored during the journey
+45 Magikarp were released back into the lake

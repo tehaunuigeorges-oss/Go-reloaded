@@ -5,19 +5,19 @@ import (
     "strings"
 )
 
-func up(words []string) []string {
+func low(words []string) []string {
     var result []string
 
     for _, w := range words {
         switch {
-        case w == "(up)":
+        case w == "(low)":
             if len(result) > 0 {
-                result[len(result)-1] = strings.ToUpper(result[len(result)-1])
+                result[len(result)-1] = strings.ToLower(result[len(result)-1])
             }
             continue
 
-        case strings.HasPrefix(w, "(up,") && strings.HasSuffix(w, ")"):
-            nstr := strings.TrimSuffix(strings.TrimPrefix(w, "(up,"), ")")
+        case strings.HasPrefix(w, "(low,") && strings.HasSuffix(w, ")"):
+            nstr := strings.TrimSuffix(strings.TrimPrefix(w, "(low,"), ")")
             n, err := strconv.Atoi(nstr)
             if err == nil && n > 0 {
                 start := len(result) - n
@@ -25,7 +25,7 @@ func up(words []string) []string {
                     start = 0
                 }
                 for i := start; i < len(result); i++ {
-                    result[i] = strings.ToUpper(result[i])
+                    result[i] = strings.ToLower(result[i])
                 }
                 continue
             }

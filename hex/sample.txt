@@ -1,3 +1,20 @@
-1E (hex) files were added.
-Simply add 42 (hex) and 10 (hex) to get the output.
-The hexadecimal FF (hex) is equal to 255 in decimal.
+1E (hex) Pokémon were caught in the forest
+FF (hex) Poké Balls were used today"
+A (hex) trainers registered for the tournament
+64 (hex) Rare Candies were collected
+3F (hex) wild Pokémon appeared on Route 1
+C8 (hex) HP was restored after the battle
+96 (hex) Gym Badges were earned this season
+2A (hex) Pikachu were spotted in the forest
+B4 (hex) Potions were sold at the Poké Mart
+7F (hex) trainers were defeated by the Elite Four
+C (hex) Legendary Pokémon were sighted this year
+32 (hex) Eggs hatched at the Day Care
+50 (hex) Ultra Balls were thrown at the Safari Zone
+9 (hex) Shiny Pokémon were found this week
+E (hex) Gym battles were won in a row
+12C (hex) EXP points were gained from the battle
+1F4 (hex) steps were taken in the Safari Zone"
+8 (hex) Great Balls remained in the bag
+15 (hex) Routes were explored during the journey
+2D (hex) Magikarp were released back into the lake
