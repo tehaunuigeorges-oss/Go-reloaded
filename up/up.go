@@ -5,25 +5,58 @@ import (
 	"strings"
 )
 
+func upperWordPreserveFormat(s string) string {
+	prefix := ""
+	suffix := ""
+	for len(s) > 0 {
+		if strings.ContainsRune("([", rune(s[0])) {
+			prefix += string(s[0])
+			s = s[1:]
+			continue
+		}
+		break
+	}
+	for len(s) > 0 {
+		last := rune(s[len(s)-1])
+		if strings.ContainsRune("),]", last) || last == ',' || last == ';' || last == ':' {
+			suffix = string(last) + suffix
+			s = s[:len(s)-1]
+			continue
+		}
+		break
+	}
+	return prefix + strings.ToUpper(s) + suffix
+}
+
 func up(words []string) []string {
-	result := make([]string, 0, len(words))
-	var nbr int
+	var result []string
 
 	for _, w := range words {
-		if w == "(up)" {
+		normalized := strings.Trim(w, "[](),")
+
+		switch {
+		case normalized == "up":
 			if len(result) > 0 {
-				result[len(result)-1] = strings.ToUpper(result[len(result)-1])
+				result[len(result)-1] = upperWordPreserveFormat(result[len(result)-1])
 			}
 			continue
-		}else if w = strings.HasPrefix(C){
-			result[len(result)-nbr] = strings.ToUpper(result[len(result)-nbr])
-			nStr := strings.TrimPrefix("(up)"),strings.TrimSuffix(")")
-			nbr, _ := strconv.Atoi(nStr)
-			result[len(result)-nbr:] = strings.ToUpper(result[len(result)-nbr:])
+
+		case strings.HasPrefix(normalized, "up,"):
+			nstr := strings.TrimPrefix(normalized, "up,")
+			n, err := strconv.Atoi(nstr)
+			if err == nil && n > 0 {
+				start := len(result) - n
+				if start < 0 {
+					start = 0
+				}
+				for i := start; i < len(result); i++ {
+					result[i] = upperWordPreserveFormat(result[i])
+				}
+				continue
+			}
 		}
 
 		result = append(result, w)
 	}
-
 	return result
 }

@@ -1,20 +1,21 @@
-"PIKACHU used Thunderbolt"
-"CHARIZARD learned Flamethrower"
-"BULBASAUR evolved into Ivysaur"
-"SQUIRTLE was caught in the lake"
-"EEVEE can evolve into many forms"
-"SNORLAX blocked the path"
-"GENGAR appeared at midnight"
-"MEWTWO is a legendary Pokémon"
-"JIGGLYPUFF sang everyone to sleep"
-"LUCARIO mastered Aura Sphere"
-"DRAGONITE flew across the region"
-"GYARADOS emerged from the water"
-"MACHAMP lifted the boulder"
-"ALAKAZAM used Psychic"
-"VAPOREON swam through the river"
-"DITTO transformed into a rival"
-"ONIX tunneled underground"
-"ARCANINE ran at full speed"
-"TOGEPI hatched from an egg"
-"rayquaza descended from the sky(up,2)"
+PIKACHU used Thunderbolt
+CHARIZARD learned Flamethrower
+BULBASAUR evolved into Ivysaur
+SQUIRTLE was caught in the lake
+EEVEE can evolve into many forms
+snorlax blocked the PATH
+TEAM ROCKET stole the Pokémon
+ASH KETCHUM left Pallet Town
+misty BROCK AND ASH traveled together
+GENGAR appeared at midnight
+mewtwo is a LEGENDARY Pokémon
+jigglypuff sang everyone to SLEEP
+lucario MASTERED Aura Sphere
+dragonite flew across THE REGION
+gyarados EMERGED from the water
+MACHAMP LIFTED THE BOULDER
+alakazam USED Psychic
+VAPOREON SWAM THROUGH the river
+ditto transformed into a RIVAL
+ONIX TUNNELED underground
+RAYQUAZA DESCENDED FROM THE SKY
