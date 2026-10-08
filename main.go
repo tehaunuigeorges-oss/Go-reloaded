@@ -38,6 +38,7 @@ func main() {
 		modifiedWords = fonction.Up(modifiedWords)
 		modifiedWords = fonction.Ponctuation(modifiedWords)
 		modifiedWords = fonction.Guillemet(modifiedWords)
+		modifiedWords = fonction.An(modifiedWords)
 
 		processedLines = append(processedLines, strings.Join(modifiedWords, " "))
 	}
