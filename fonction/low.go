@@ -1,34 +1,43 @@
 package fonction
 
 import (
-    "strconv"
-    "strings"
+	"strconv"
+	"strings"
 )
 
 func Low(words []string) []string {
-    var result []string
+	var result []string
 
-    for _, w := range words {
-        switch {
-        case w == "(low)":
-            if len(result) > 0 {
-                result[len(result)-1] = strings.ToLower(result[len(result)-1])
-            }
-            continue
+	for i := 0; i < len(words); i++ {
+		w := words[i]
+		switch {
+		case w == "(low)":
+			if len(result) > 0 {
+				result[len(result)-1] = strings.ToLower(result[len(result)-1])
+			}
+			continue
 
-        case strings.HasPrefix(w, "(low,") && strings.HasSuffix(w, ")"):
-            nstr := strings.TrimSuffix(strings.TrimPrefix(w, "(low,"), ")")
-            n, err := strconv.Atoi(nstr)
-            if err == nil && n > 0 {
-                start := max(len(result) - n, 0)
-                for i := start; i < len(result); i++ {
-                    result[i] = strings.ToLower(result[i])
-                }
-                continue
-            }
-        }
+		case w == "(low," && i+1 < len(words):
+			n, err := strconv.Atoi(strings.TrimSuffix(words[i+1], ")"))
+			if err == nil && n > 0 && strings.HasSuffix(words[i+1], ")") {
+				for j := max(len(result)-n, 0); j < len(result); j++ {
+					result[j] = strings.ToLower(result[j])
+				}
+				i++
+				continue
+			}
 
-        result = append(result, w)
-    }
-    return result
+		case strings.HasPrefix(w, "(low,") && strings.HasSuffix(w, ")"):
+			n, err := strconv.Atoi(strings.TrimSuffix(strings.TrimPrefix(w, "(low,"), ")"))
+			if err == nil && n > 0 {
+				for j := max(len(result)-n, 0); j < len(result); j++ {
+					result[j] = strings.ToLower(result[j])
+				}
+				continue
+			}
+		}
+
+		result = append(result, w)
+	}
+	return result
 }

@@ -8,7 +8,8 @@ import (
 func Up(words []string) []string {
 	var result []string
 
-	for _, w := range words {
+	for i := 0; i < len(words); i++ {
+		w := words[i]
 		switch {
 		case w == "(up)":
 			if len(result) > 0 {
@@ -16,16 +17,21 @@ func Up(words []string) []string {
 			}
 			continue
 
-		case strings.HasPrefix(w, "(up,") && strings.HasSuffix(w, ")"):
-			nstr := strings.TrimSuffix(strings.TrimPrefix(w, "(up,"), ")")
-			n, err := strconv.Atoi(nstr)
-			if err == nil && n > 0 {
-				start := len(result) - n
-				if start < 0 {
-					start = 0
+		case w == "(up," && i+1 < len(words):
+			n, err := strconv.Atoi(strings.TrimSuffix(words[i+1], ")"))
+			if err == nil && n > 0 && strings.HasSuffix(words[i+1], ")") {
+				for j := max(len(result)-n, 0); j < len(result); j++ {
+					result[j] = strings.ToUpper(result[j])
 				}
-				for i := start; i < len(result); i++ {
-					result[i] = strings.ToUpper(result[i])
+				i++
+				continue
+			}
+
+		case strings.HasPrefix(w, "(up,") && strings.HasSuffix(w, ")"):
+			n, err := strconv.Atoi(strings.TrimSuffix(strings.TrimPrefix(w, "(up,"), ")"))
+			if err == nil && n > 0 {
+				for j := max(len(result)-n, 0); j < len(result); j++ {
+					result[j] = strings.ToUpper(result[j])
 				}
 				continue
 			}

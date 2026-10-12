@@ -8,13 +8,11 @@ import (
 )
 
 func main() {
-	if len(os.Args) < 3 {
-		fmt.Println("Format attendu: go run . <inputFile> <outputFile>")
+	if len(os.Args) < 2 {
+		fmt.Println("Format attendu: go run . <inputFile>")
 		return
 	}
 	inputFile := os.Args[1]
-	outputFile := os.Args[2]
-
 	contentBytes, err := os.ReadFile(inputFile)
 	if err != nil {
 		fmt.Println("ERREUR DE LECTURE DU FICHIER :", err)
@@ -45,7 +43,7 @@ func main() {
 
 	finalText := strings.Join(processedLines, "\n")
 
-	err = os.WriteFile(outputFile, []byte(finalText), 0644)
+	err = os.WriteFile("result.txt", []byte(finalText), 0644)
 	if err != nil {
 		fmt.Println("Erreur écriture :", err)
 		return
